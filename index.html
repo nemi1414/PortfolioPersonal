@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio de Juan Ignacio Nemi, Técnico Universitario en Programación UTN. Proyectos en Kotlin, Android, C# y desarrollo web.">
     <meta name="theme-color" content="#0b1120">
+    <link rel="alternate" hreflang="es" href="?lang=es">
+    <link rel="alternate" hreflang="en" href="?lang=en">
+    <link rel="alternate" hreflang="x-default" href="?lang=es">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style.css">
@@ -15,15 +18,19 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="site-nav" aria-label="Navegación principal">
-            <a class="brand" href="#sobre-mi" aria-label="Juan Ignacio Nemi, inicio">JN</a>
+        <nav class="site-nav" aria-label="Navegación principal" data-i18n-aria-label="mainNavigation">
+            <a class="brand" href="#sobre-mi" aria-label="Juan Ignacio Nemi, inicio" data-i18n-aria-label="homeLink">JN</a>
             <ul>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#conocimientos">Conocimientos</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#estudios">Formación</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#sobre-mi" data-i18n="navAbout">Sobre mí</a></li>
+                <li><a href="#conocimientos" data-i18n="navSkills">Conocimientos</a></li>
+                <li><a href="#proyectos" data-i18n="navProjects">Proyectos</a></li>
+                <li><a href="#estudios" data-i18n="navEducation">Formación</a></li>
+                <li><a href="#contacto" data-i18n="navContact">Contacto</a></li>
             </ul>
+            <div class="language-switch" role="group" aria-label="Seleccionar idioma" data-i18n-aria-label="languageSelector">
+                <button type="button" data-language="es" aria-label="Español" data-i18n-aria-label="spanishLanguage" aria-pressed="true">ES</button>
+                <button type="button" data-language="en" aria-label="Inglés" data-i18n-aria-label="englishLanguage" aria-pressed="false">EN</button>
+            </div>
         </nav>
     </header>
 
@@ -31,34 +38,34 @@
         <section id="sobre-mi" class="hero">
             <div class="hero-inner">
                 <div class="hero-copy">
-                    <p class="eyebrow"><span class="availability-dot"></span> Disponible para oportunidades junior</p>
-                    <p class="hero-credential">Técnico Universitario en Programación <span>· UTN</span></p>
-                    <h1>Hola, soy <span>Juan Ignacio Nemi</span></h1>
-                    <h2>Desarrollador de software</h2>
-                    <p class="hero-description">Me enfoco en crear aplicaciones móviles con Kotlin y Android, y soluciones web con C# y .NET. Disfruto aprender, trabajar en equipo y convertir ideas en productos útiles.</p>
+                    <p class="eyebrow"><span class="availability-dot"></span><span data-i18n="availability">Disponible para oportunidades junior</span></p>
+                    <p class="hero-credential"><span data-i18n="degree">Técnico Universitario en Programación</span> <span>· UTN</span></p>
+                    <h1><span class="hero-greeting" data-i18n="greeting">Hola, soy</span> <span class="hero-name">Juan Ignacio Nemi</span></h1>
+                    <h2 data-i18n="profession">Desarrollador de software</h2>
+                    <p class="hero-description" data-i18n="heroDescription">Me enfoco en crear aplicaciones móviles con Kotlin y Android, y soluciones web con C# y .NET. Disfruto aprender, trabajar en equipo y convertir ideas en productos útiles.</p>
                     <div class="hero-actions">
-                        <a href="#proyectos" class="button button-primary">Ver proyectos <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
-                        <a href="CV_Juan_Ignacio_Nemi_.pdf" download class="button button-secondary">Descargar CV <i class="bi bi-download" aria-hidden="true"></i></a>
+                        <a href="#proyectos" class="button button-primary"><span data-i18n="viewProjects">Ver proyectos</span> <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
+                        <a href="CV_Juan_Ignacio_Nemi_.pdf" download class="button button-secondary"><span data-i18n="downloadCv">Descargar CV</span> <i class="bi bi-download" aria-hidden="true"></i></a>
                     </div>
-                    <ul class="hero-facts" aria-label="Información adicional">
-                        <li><i class="bi bi-geo-alt" aria-hidden="true"></i> CABA, Buenos Aires</li>
-                        <li><i class="bi bi-translate" aria-hidden="true"></i> Inglés C1</li>
+                    <ul class="hero-facts" aria-label="Información adicional" data-i18n-aria-label="additionalInformation">
+                        <li><i class="bi bi-geo-alt" aria-hidden="true"></i> <span data-i18n="location">CABA, Buenos Aires</span></li>
+                        <li><i class="bi bi-translate" aria-hidden="true"></i> <span data-i18n="englishLevel">Inglés C1</span></li>
                     </ul>
                 </div>
                 <div class="hero-portrait">
                     <div class="portrait-frame">
-                        <img src="fotoPerfil.jpeg" alt="Retrato de Juan Ignacio Nemi" width="360" height="360">
+                        <img src="fotoPerfil.jpeg" alt="Retrato de Juan Ignacio Nemi" data-i18n-alt="portraitAlt" width="360" height="360">
                     </div>
-                    <span class="portrait-caption"><i class="bi bi-code-slash" aria-hidden="true"></i> Software · Web · Android</span>
+                    <span class="portrait-caption"><i class="bi bi-code-slash" aria-hidden="true"></i> <span data-i18n="portraitCaption">Software · Web · Android</span></span>
                 </div>
             </div>
         </section>
 
     <section id="conocimientos" class="content-section">
         <div class="section-heading">
-            <p class="section-kicker">Mi stack</p>
-            <h2>Conocimientos</h2>
-            <p>Tecnologías y herramientas que utilizo en mis proyectos.</p>
+            <p class="section-kicker" data-i18n="skillsKicker">Mi stack</p>
+            <h2 data-i18n="skillsTitle">Conocimientos</h2>
+            <p data-i18n="skillsDescription">Tecnologías y herramientas que utilizo en mis proyectos.</p>
         </div>
         <div class="iconos">
             <div class="icono-habilidad"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML</span></div>
@@ -72,31 +79,31 @@
             <div class="icono-habilidad"><i class="devicon-androidstudio-plain colored" aria-hidden="true"></i><span>Android Studio</span></div>
         </div>
         <div class="conocimientos-complementarios">
-            <p><strong>Bases de datos:</strong> SQL, Supabase</p>
-            <p><strong>Herramientas:</strong> Git, GitHub</p>
-            <p><strong>Conceptos:</strong> Programación orientada a objetos, metodología Agile</p>
+            <p><strong data-i18n="databases">Bases de datos:</strong> SQL, Supabase</p>
+            <p><strong data-i18n="tools">Herramientas:</strong> Git, GitHub</p>
+            <p><strong data-i18n="concepts">Conceptos:</strong> <span data-i18n="conceptsDescription">Programación orientada a objetos, metodología Agile</span></p>
         </div>
     </section>
 
     <section id="proyectos" class="content-section">
         <div class="section-heading">
-            <p class="section-kicker">Trabajo seleccionado</p>
-            <h2>Proyectos</h2>
-            <p>Una selección de aplicaciones y trabajos realizados durante mi formación.</p>
+            <p class="section-kicker" data-i18n="projectsKicker">Trabajo seleccionado</p>
+            <h2 data-i18n="projectsTitle">Proyectos</h2>
+            <p data-i18n="projectsDescription">Una selección de aplicaciones y trabajos realizados durante mi formación.</p>
         </div>
         <div class="proyectos-container">
             <div class="proyectos-grid">
                 <article class="proyecto-card">
                     <div class="proyecto-placeholder petcare-placeholder" aria-hidden="true">
                         <i class="bi bi-heart-pulse"></i>
-                        <span>Aplicación Android</span>
+                        <span data-i18n="androidApp">Aplicación Android</span>
                     </div>
                     <div class="proyecto-content">
-                        <span class="proyecto-etiqueta">Proyecto final de carrera</span>
-                        <h4 class="proyecto-title">Petcare: aplicación para clínica veterinaria</h4>
-                        <p class="proyecto-text">Aplicación Android para gestionar historias clínicas de mascotas, con perfiles para dueños, veterinarios y administradores.</p>
+                        <span class="proyecto-etiqueta" data-i18n="capstoneProject">Proyecto final de carrera</span>
+                        <h4 class="proyecto-title" data-i18n="petcareTitle">Petcare: aplicación para clínica veterinaria</h4>
+                        <p class="proyecto-text" data-i18n="petcareDescription">Aplicación Android para gestionar historias clínicas de mascotas, con perfiles para dueños, veterinarios y administradores.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>Kotlin</li>
                                 <li>Android Studio</li>
@@ -107,12 +114,12 @@
                 </article>
 
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/qC3hQjFG6LA" title="Demostración del sistema gestor de restaurante" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/qC3hQjFG6LA" title="Demostración del sistema gestor de restaurante" data-i18n-title="restaurantVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="proyecto-content">
-                        <h4 class="proyecto-title">Sistema gestor de restaurante</h4>
-                        <p class="proyecto-text">Sistema para gestionar mesas, productos, empleados, ventas y reportes de un restaurante.</p>
+                        <h4 class="proyecto-title" data-i18n="restaurantTitle">Sistema gestor de restaurante</h4>
+                        <p class="proyecto-text" data-i18n="restaurantDescription">Sistema para gestionar mesas, productos, empleados, ventas y reportes de un restaurante.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>ASP.NET</li>
                                 <li>C#</li>
@@ -121,18 +128,18 @@
                             </ul>
                         </div>
                         <div class="proyecto-acciones">
-                            <a href="https://github.com/julcontrerass/TukiTuAsistenteDeSalon" target="_blank" rel="noopener noreferrer">Ver código</a>
+                            <a href="https://github.com/julcontrerass/TukiTuAsistenteDeSalon" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/gWfI6sSuU_Y" title="Demostración del e-commerce ASP.NET" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/gWfI6sSuU_Y" title="Demostración del e-commerce ASP.NET" data-i18n-title="ecommerceVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="proyecto-content">
-                        <h4 class="proyecto-title">E-commerce ASP.NET</h4>
-                        <p class="proyecto-text">Aplicación web con productos y promociones mediante vouchers cargados desde la base de datos, registro de clientes y envío de correos.</p>
+                        <h4 class="proyecto-title" data-i18n="ecommerceTitle">E-commerce ASP.NET</h4>
+                        <p class="proyecto-text" data-i18n="ecommerceDescription">Aplicación web con productos y promociones mediante vouchers cargados desde la base de datos, registro de clientes y envío de correos.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>ASP.NET</li>
                                 <li>C#</li>
@@ -140,18 +147,18 @@
                             </ul>
                         </div>
                         <div class="proyecto-acciones">
-                            <a href="https://github.com/julcontrerass/TPWeb_Equipo8A" target="_blank" rel="noopener noreferrer">Ver código</a>
+                            <a href="https://github.com/julcontrerass/TPWeb_Equipo8A" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/o8mwPoS5SMY" title="Demostración del catálogo de ropa" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/o8mwPoS5SMY" title="Demostración del catálogo de ropa" data-i18n-title="clothingVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="proyecto-content">
-                        <h4 class="proyecto-title">Catálogo de ropa</h4>
-                        <p class="proyecto-text">Página con catálogo de productos, navegación y mapa de ubicación.</p>
+                        <h4 class="proyecto-title" data-i18n="clothingTitle">Catálogo de ropa</h4>
+                        <p class="proyecto-text" data-i18n="clothingDescription">Página con catálogo de productos, navegación y mapa de ubicación.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>HTML</li>
                                 <li>CSS</li>
@@ -159,26 +166,26 @@
                             </ul>
                         </div>
                         <div class="proyecto-acciones">
-                            <a href="https://github.com/nemi1414/Ecommerce-front-end" target="_blank" rel="noopener noreferrer">Ver código</a>
+                            <a href="https://github.com/nemi1414/Ecommerce-front-end" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
                         </div>
                     </div>
                 </article>
 
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/1Ow_lqytQzY" title="Demostración del sistema de gestión de cine" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/1Ow_lqytQzY" title="Demostración del sistema de gestión de cine" data-i18n-title="cinemaVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="proyecto-content">
-                        <h4 class="proyecto-title">Sistema de gestión de entradas de cine</h4>
-                        <p class="proyecto-text">Aplicación de consola con registros de administradores y clientes para gestionar películas, salas y reservas.</p>
+                        <h4 class="proyecto-title" data-i18n="cinemaTitle">Sistema de gestión de entradas de cine</h4>
+                        <p class="proyecto-text" data-i18n="cinemaDescription">Aplicación de consola con registros de administradores y clientes para gestionar películas, salas y reservas.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>C++</li>
-                                <li>Librería rlutil</li>
-                                <li>POO y manejo de archivos</li>
+                                <li data-i18n="rlutilLibrary">Librería rlutil</li>
+                                <li data-i18n="oopFileHandling">POO y manejo de archivos</li>
                             </ul>
                         </div>
                         <div class="proyecto-acciones">
-                            <a href="https://github.com/nemi1414/gestor-Cine" target="_blank" rel="noopener noreferrer">Ver código</a>
+                            <a href="https://github.com/nemi1414/gestor-Cine" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
                         </div>
                     </div>
                 </article>
@@ -186,35 +193,35 @@
                 <article class="proyecto-card">
                     <div class="proyecto-placeholder calculator-placeholder" aria-hidden="true">
                         <i class="bi bi-bar-chart-line"></i>
-                        <span>Estadística descriptiva</span>
+                        <span data-i18n="descriptiveStatistics">Estadística descriptiva</span>
                     </div>
                     <div class="proyecto-content">
-                        <h4 class="proyecto-title">Calculadora estadística</h4>
-                        <p class="proyecto-text">Proyecto de consola con opciones de estadística descriptiva y generación de diagramas circulares.</p>
+                        <h4 class="proyecto-title" data-i18n="calculatorTitle">Calculadora estadística</h4>
+                        <p class="proyecto-text" data-i18n="calculatorDescription">Proyecto de consola con opciones de estadística descriptiva y generación de diagramas circulares.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>C++</li>
-                                <li>Librería math</li>
+                                <li data-i18n="mathLibrary">Librería math</li>
                             </ul>
                         </div>
                     </div>
                 </article>
 
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/ywoFwvQyKLo" title="Demostración del juego de dados Escalera" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/ywoFwvQyKLo" title="Demostración del juego de dados Escalera" data-i18n-title="diceVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     <div class="proyecto-content">
-                        <h4 class="proyecto-title">Juego de dados - Escalera</h4>
-                        <p class="proyecto-text">Proyecto de consola con menú para un jugador, dos jugadores, simulación y ranking.</p>
+                        <h4 class="proyecto-title" data-i18n="diceTitle">Juego de dados - Escalera</h4>
+                        <p class="proyecto-text" data-i18n="diceDescription">Proyecto de consola con menú para un jugador, dos jugadores, simulación y ranking.</p>
                         <div class="proyecto-tecnologias">
-                            <strong>Tecnologías:</strong>
+                            <strong data-i18n="technologies">Tecnologías:</strong>
                             <ul>
                                 <li>C++</li>
-                                <li>Librería rlutil</li>
+                                <li data-i18n="rlutilLibrary">Librería rlutil</li>
                             </ul>
                         </div>
                         <div class="proyecto-acciones">
-                            <a href="https://github.com/nemi1414/Juego-Dados" target="_blank" rel="noopener noreferrer">Ver código</a>
+                            <a href="https://github.com/nemi1414/Juego-Dados" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
                         </div>
                     </div>
                 </article>
@@ -226,25 +233,25 @@
 
     <section id="estudios" class="content-section">
         <div class="section-heading">
-            <p class="section-kicker">Formación</p>
-            <h2>Educación</h2>
+            <p class="section-kicker" data-i18n="educationKicker">Formación</p>
+            <h2 data-i18n="educationTitle">Educación</h2>
         </div>
         <div class="education-card">
             <span class="education-icon"><i class="bi bi-mortarboard" aria-hidden="true"></i></span>
             <div>
-                <h3>Técnico Universitario en Programación</h3>
-                <p>Universidad Tecnológica Nacional (UTN)</p>
-                <p class="education-date">Marzo de 2024 – noviembre de 2026 <span>· Graduado</span></p>
+                <h3 data-i18n="degree">Técnico Universitario en Programación</h3>
+                <p data-i18n="university">Universidad Tecnológica Nacional (UTN)</p>
+                <p class="education-date"><span data-i18n="educationDates">Marzo de 2024 – noviembre de 2026</span> <span data-i18n="graduated">· Graduado</span></p>
             </div>
-            <div class="education-average"><strong>8.8</strong><span>Promedio final</span></div>
+            <div class="education-average"><strong>8.8</strong><span data-i18n="finalAverage">Promedio final</span></div>
         </div>
     </section>
     <section id="contacto" class="content-section contact-section">
         <div class="contact-card">
             <div class="contact-copy">
-                <p class="section-kicker">Hablemos</p>
-                <h2>¿Buscás sumar a alguien a tu equipo?</h2>
-                <p>Estoy abierto a oportunidades junior en desarrollo de software. Escribime o encontrame en mis perfiles profesionales.</p>
+                <p class="section-kicker" data-i18n="contactKicker">Hablemos</p>
+                <h2 data-i18n="contactTitle">¿Buscás sumar a alguien a tu equipo?</h2>
+                <p data-i18n="contactDescription">Estoy abierto a oportunidades junior en desarrollo de software. Escribime o encontrame en mis perfiles profesionales.</p>
                 <a class="contact-email" href="mailto:juanignacionemi@gmail.com"><i class="bi bi-envelope" aria-hidden="true"></i> juanignacionemi@gmail.com</a>
             </div>
             <div class="form-contacto">
@@ -253,13 +260,13 @@
                     <li><a href="https://github.com/nemi1414" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> GitHub</a></li>
                 </ul>
                 <form id="contact-form">
-                    <label for="contact-name">Nombre</label>
-                    <input id="contact-name" type="text" name="nombre" placeholder="Tu nombre" autocomplete="name" required>
-                    <label for="contact-email">Correo electrónico</label>
-                    <input id="contact-email" type="email" name="email" placeholder="nombre@ejemplo.com" autocomplete="email" required>
-                    <label for="contact-message">Mensaje</label>
-                    <textarea id="contact-message" name="mensaje" placeholder="¿En qué puedo ayudarte?" rows="4" required></textarea>
-                    <button type="submit">Enviar mensaje <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                    <label for="contact-name" data-i18n="nameLabel">Nombre</label>
+                    <input id="contact-name" type="text" name="nombre" placeholder="Tu nombre" data-i18n-placeholder="namePlaceholder" autocomplete="name" required>
+                    <label for="contact-email" data-i18n="emailLabel">Correo electrónico</label>
+                    <input id="contact-email" type="email" name="email" placeholder="nombre@ejemplo.com" data-i18n-placeholder="emailPlaceholder" autocomplete="email" required>
+                    <label for="contact-message" data-i18n="messageLabel">Mensaje</label>
+                    <textarea id="contact-message" name="mensaje" placeholder="¿En qué puedo ayudarte?" data-i18n-placeholder="messagePlaceholder" rows="4" required></textarea>
+                    <button type="submit"><span data-i18n="sendMessage">Enviar mensaje</span> <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
                     <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
                 </form>
             </div>
@@ -267,8 +274,8 @@
     </section>
     </main>
     <footer class="site-footer">
-        <p>© <span id="current-year">2026</span> Juan Ignacio Nemi <span>· Hecho con dedicación en Buenos Aires</span></p>
-        <a href="#sobre-mi">Volver arriba <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+        <p>© <span id="current-year">2026</span> Juan Ignacio Nemi <span data-i18n="footerNote">· Hecho con dedicación en Buenos Aires</span></p>
+        <a href="#sobre-mi"><span data-i18n="backToTop">Volver arriba</span> <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
     </footer>
 <script src="javascript.js"></script>
 </body>
