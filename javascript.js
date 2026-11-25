@@ -24,8 +24,9 @@ const translations = {
         additionalInformation: 'Información adicional',
         location: 'CABA, Buenos Aires',
         englishLevel: 'Inglés C1',
-        portraitAlt: 'Retrato de Juan Ignacio Nemi',
-        portraitCaption: 'Software · Web · Android',
+        heroSkillMobile: 'Apps móviles',
+        heroSkillWeb: 'Desarrollo web',
+        heroSkillData: 'Bases de datos',
         skillsKicker: 'Mi stack',
         skillsTitle: 'Conocimientos',
         skillsDescription: 'Tecnologías y herramientas que utilizo en mis proyectos.',
@@ -36,7 +37,22 @@ const translations = {
         projectsKicker: 'Trabajo seleccionado',
         projectsTitle: 'Proyectos',
         projectsDescription: 'Una selección de aplicaciones y trabajos realizados durante mi formación.',
-        androidApp: 'Aplicación Android',
+        projectOpenDetails: 'Abrir experiencia',
+        projectLabel: 'Proyecto',
+        techListLabel: 'Tecnologías utilizadas',
+        closeProjectExperience: 'Cerrar proyecto',
+        projectDetailsKicker: 'Detalle del proyecto',
+        projectComputerCaption: 'Video de demostración',
+        closePetcareExperience: 'Cerrar experiencia Petcare',
+        petcareVideoLabel: 'Video de demostración de Petcare',
+        petcareDemoCaption: 'Presentación de la aplicación',
+        petcareDetailKicker: 'Conocé Petcare',
+        petcareDetailTitle: 'El cuidado de cada mascota, en un solo lugar.',
+        petcareDetailDescription: 'Una aplicación Android para organizar las historias clínicas y facilitar la comunicación entre dueños, veterinarios y administradores de la clínica.',
+        petcareFeatureProfiles: 'Perfiles para cada tipo de usuario',
+        petcareFeatureRecords: 'Historias clínicas de las mascotas',
+        petcareFeatureAndroid: 'Desarrollada para Android con Kotlin',
+        petcareVideoPending: 'El video de demostración estará disponible pronto.',
         capstoneProject: 'Proyecto final de carrera',
         petcareTitle: 'Petcare: aplicación para clínica veterinaria',
         petcareDescription: 'Aplicación Android para gestionar historias clínicas de mascotas, con perfiles para dueños, veterinarios y administradores.',
@@ -55,10 +71,6 @@ const translations = {
         cinemaTitle: 'Sistema de gestión de entradas de cine',
         cinemaDescription: 'Aplicación de consola con registros de administradores y clientes para gestionar películas, salas y reservas.',
         oopFileHandling: 'POO y manejo de archivos',
-        descriptiveStatistics: 'Estadística descriptiva',
-        calculatorTitle: 'Calculadora estadística',
-        calculatorDescription: 'Proyecto de consola con opciones de estadística descriptiva y generación de diagramas circulares.',
-        mathLibrary: 'Librería math',
         diceVideoTitle: 'Demostración del juego de dados Escalera',
         diceTitle: 'Juego de dados - Escalera',
         diceDescription: 'Proyecto de consola con menú para un jugador, dos jugadores, simulación y ranking.',
@@ -108,8 +120,9 @@ const translations = {
         additionalInformation: 'Additional information',
         location: 'Buenos Aires, Argentina',
         englishLevel: 'English C1',
-        portraitAlt: 'Portrait of Juan Ignacio Nemi',
-        portraitCaption: 'Software · Web · Android',
+        heroSkillMobile: 'Mobile apps',
+        heroSkillWeb: 'Web development',
+        heroSkillData: 'Databases',
         skillsKicker: 'My stack',
         skillsTitle: 'Skills',
         skillsDescription: 'Technologies and tools I use in my projects.',
@@ -120,7 +133,22 @@ const translations = {
         projectsKicker: 'Selected work',
         projectsTitle: 'Projects',
         projectsDescription: 'A selection of applications and projects built during my studies.',
-        androidApp: 'Android application',
+        projectOpenDetails: 'Open experience',
+        projectLabel: 'Project',
+        techListLabel: 'Technologies used',
+        closeProjectExperience: 'Close project',
+        projectDetailsKicker: 'Project details',
+        projectComputerCaption: 'Demo video',
+        closePetcareExperience: 'Close Petcare experience',
+        petcareVideoLabel: 'Petcare app demo video',
+        petcareDemoCaption: 'App presentation',
+        petcareDetailKicker: 'Get to know Petcare',
+        petcareDetailTitle: 'Every pet’s care, all in one place.',
+        petcareDetailDescription: 'An Android application that organizes medical records and helps owners, veterinarians, and clinic administrators stay connected.',
+        petcareFeatureProfiles: 'Dedicated profiles for each user type',
+        petcareFeatureRecords: 'Medical records for every pet',
+        petcareFeatureAndroid: 'Built for Android with Kotlin',
+        petcareVideoPending: 'The demo video will be available soon.',
         capstoneProject: 'Capstone project',
         petcareTitle: 'Petcare: veterinary clinic app',
         petcareDescription: 'An Android app for managing pets’ medical records, with dedicated profiles for pet owners, veterinarians, and administrators.',
@@ -139,10 +167,6 @@ const translations = {
         cinemaTitle: 'Cinema ticket management system',
         cinemaDescription: 'A console application with administrator and customer accounts for managing movies, theaters, and bookings.',
         oopFileHandling: 'OOP and file handling',
-        descriptiveStatistics: 'Descriptive statistics',
-        calculatorTitle: 'Statistics calculator',
-        calculatorDescription: 'A console project with descriptive statistics options and pie chart generation.',
-        mathLibrary: 'math library',
         diceVideoTitle: 'Escalera dice game demo',
         diceTitle: 'Escalera dice game',
         diceDescription: 'A console game with single-player and two-player modes, simulations, and a leaderboard.',
@@ -183,7 +207,6 @@ try {
 
 const browserLanguage = (navigator.language || 'es').toLowerCase().startsWith('en') ? 'en' : 'es';
 let currentLanguage = translations[languageQuery] ? languageQuery : translations[savedLanguage] ? savedLanguage : browserLanguage;
-
 function updateLanguage(language, updateUrl) {
     currentLanguage = language;
     const copy = translations[language];
@@ -210,6 +233,7 @@ function updateLanguage(language, updateUrl) {
     document.querySelectorAll('[data-i18n-aria-label]').forEach(function(element) {
         element.setAttribute('aria-label', copy[element.dataset.i18nAriaLabel]);
     });
+
 
     languageButtons.forEach(function(button) {
         button.setAttribute('aria-pressed', String(button.dataset.language === language));
@@ -239,6 +263,67 @@ languageButtons.forEach(function(button) {
 });
 
 updateLanguage(currentLanguage, !languageQuery);
+
+const projectsGrid = document.getElementById('projects-grid');
+const projectCards = Array.from(projectsGrid.querySelectorAll('.proyecto-card'));
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+function closeProjectExperience(card) {
+    const trigger = card.querySelector('.project-card-trigger');
+    const expanded = card.querySelector('.project-expanded');
+
+    expanded.querySelectorAll('iframe[data-src]').forEach(function(frame) {
+        frame.removeAttribute('src');
+    });
+    expanded.hidden = true;
+    trigger.hidden = false;
+    trigger.setAttribute('aria-expanded', 'false');
+    card.classList.remove('is-expanded');
+    projectsGrid.classList.remove('has-expanded');
+    projectCards.forEach(function(projectCard) {
+        projectCard.inert = false;
+    });
+    card.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+    trigger.focus();
+}
+
+projectCards.forEach(function(card) {
+    const trigger = card.querySelector('.project-card-trigger');
+    const expanded = card.querySelector('.project-expanded');
+    const closeButton = card.querySelector('.project-close');
+
+    trigger.addEventListener('click', function() {
+        projectsGrid.classList.add('has-expanded');
+        card.classList.add('is-expanded');
+        trigger.setAttribute('aria-expanded', 'true');
+        trigger.hidden = true;
+        expanded.hidden = false;
+        projectCards.forEach(function(projectCard) {
+            if (projectCard !== card) {
+                projectCard.inert = true;
+            }
+        });
+        expanded.querySelectorAll('iframe[data-src]').forEach(function(frame) {
+            frame.src = frame.dataset.src;
+        });
+        closeButton.focus();
+    });
+
+    closeButton.addEventListener('click', function() {
+        closeProjectExperience(card);
+    });
+});
+
+document.addEventListener('keydown', function(event) {
+    const openCard = projectCards.find(function(card) {
+        return card.classList.contains('is-expanded');
+    });
+
+    if (event.key === 'Escape' && openCard) {
+        event.preventDefault();
+        closeProjectExperience(openCard);
+    }
+});
 
 const form = document.getElementById('contact-form');
 const formStatus = document.getElementById('form-status');

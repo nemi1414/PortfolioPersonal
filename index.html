@@ -52,11 +52,25 @@
                         <li><i class="bi bi-translate" aria-hidden="true"></i> <span data-i18n="englishLevel">Inglés C1</span></li>
                     </ul>
                 </div>
-                <div class="hero-portrait">
-                    <div class="portrait-frame">
-                        <img src="fotoPerfil.jpeg" alt="Retrato de Juan Ignacio Nemi" data-i18n-alt="portraitAlt" width="360" height="360">
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="hero-atom">
+                        <div class="hero-atom-orbit hero-atom-orbit--horizontal"></div>
+                        <div class="hero-atom-orbit hero-atom-orbit--diagonal-left"></div>
+                        <div class="hero-atom-orbit hero-atom-orbit--diagonal-right"></div>
+                        <div class="hero-atom-core"><i class="bi bi-code-slash"></i></div>
+                        <div class="hero-skill-node hero-skill-node--mobile">
+                            <span class="hero-skill-icon"><i class="bi bi-phone"></i></span>
+                            <span class="hero-skill-name"><strong data-i18n="heroSkillMobile">Apps móviles</strong><small>Kotlin · Android</small></span>
+                        </div>
+                        <div class="hero-skill-node hero-skill-node--web">
+                            <span class="hero-skill-icon"><i class="bi bi-window"></i></span>
+                            <span class="hero-skill-name"><strong data-i18n="heroSkillWeb">Desarrollo web</strong><small>C# · .NET</small></span>
+                        </div>
+                        <div class="hero-skill-node hero-skill-node--data">
+                            <span class="hero-skill-icon"><i class="bi bi-database"></i></span>
+                            <span class="hero-skill-name"><strong data-i18n="heroSkillData">Bases de datos</strong><small>SQL · Supabase</small></span>
+                        </div>
                     </div>
-                    <span class="portrait-caption"><i class="bi bi-code-slash" aria-hidden="true"></i> <span data-i18n="portraitCaption">Software · Web · Android</span></span>
                 </div>
             </div>
         </section>
@@ -89,147 +103,223 @@
         <div class="section-heading">
             <p class="section-kicker" data-i18n="projectsKicker">Trabajo seleccionado</p>
             <h2 data-i18n="projectsTitle">Proyectos</h2>
-            <p data-i18n="projectsDescription">Una selección de aplicaciones y trabajos realizados durante mi formación.</p>
+            <p data-i18n="projectsDescription">Una selecci&oacute;n de aplicaciones y trabajos realizados durante mi formaci&oacute;n.</p>
         </div>
         <div class="proyectos-container">
-            <div class="proyectos-grid">
-                <article class="proyecto-card">
-                    <div class="proyecto-placeholder petcare-placeholder" aria-hidden="true">
-                        <i class="bi bi-heart-pulse"></i>
-                        <span data-i18n="androidApp">Aplicación Android</span>
-                    </div>
-                    <div class="proyecto-content">
-                        <span class="proyecto-etiqueta" data-i18n="capstoneProject">Proyecto final de carrera</span>
-                        <h4 class="proyecto-title" data-i18n="petcareTitle">Petcare: aplicación para clínica veterinaria</h4>
-                        <p class="proyecto-text" data-i18n="petcareDescription">Aplicación Android para gestionar historias clínicas de mascotas, con perfiles para dueños, veterinarios y administradores.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>Kotlin</li>
-                                <li>Android Studio</li>
-                                <li>Supabase</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/qC3hQjFG6LA" title="Demostración del sistema gestor de restaurante" data-i18n-title="restaurantVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="proyecto-content">
-                        <h4 class="proyecto-title" data-i18n="restaurantTitle">Sistema gestor de restaurante</h4>
-                        <p class="proyecto-text" data-i18n="restaurantDescription">Sistema para gestionar mesas, productos, empleados, ventas y reportes de un restaurante.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>ASP.NET</li>
-                                <li>C#</li>
-                                <li>JavaScript</li>
-                                <li>SQL</li>
-                            </ul>
-                        </div>
-                        <div class="proyecto-acciones">
-                            <a href="https://github.com/julcontrerass/TukiTuAsistenteDeSalon" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/gWfI6sSuU_Y" title="Demostración del e-commerce ASP.NET" data-i18n-title="ecommerceVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="proyecto-content">
-                        <h4 class="proyecto-title" data-i18n="ecommerceTitle">E-commerce ASP.NET</h4>
-                        <p class="proyecto-text" data-i18n="ecommerceDescription">Aplicación web con productos y promociones mediante vouchers cargados desde la base de datos, registro de clientes y envío de correos.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>ASP.NET</li>
-                                <li>C#</li>
-                                <li>SQL</li>
-                            </ul>
-                        </div>
-                        <div class="proyecto-acciones">
-                            <a href="https://github.com/julcontrerass/TPWeb_Equipo8A" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
-                        </div>
+            <div class="proyectos-grid" id="projects-grid">
+                <article class="proyecto-card proyecto-card--petcare" id="petcare-card">
+                    <button class="project-card-trigger" id="petcare-card-trigger" type="button" aria-expanded="false" aria-controls="petcare-expanded">
+                        <span class="project-card-art project-card-art--petcare" aria-hidden="true"><img src="assets/petcare-paw.png" alt=""><span>Kotlin &middot; Android</span></span>
+                        <span class="project-card-content">
+                            <span class="project-card-meta">01 <span data-i18n="capstoneProject">Proyecto final de carrera</span></span>
+                            <span class="project-card-title" data-i18n="petcareTitle">Petcare: aplicaci&oacute;n para cl&iacute;nica veterinaria</span>
+                            <span class="project-card-description" data-i18n="petcareDescription">Aplicaci&oacute;n Android para gestionar historias cl&iacute;nicas de mascotas, con perfiles para due&ntilde;os, veterinarios y administradores.</span>
+                            <span class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><span>Kotlin</span><span>Android Studio</span><span>Supabase</span></span>
+                            <span class="project-card-open"><span data-i18n="projectOpenDetails">Abrir experiencia</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <div class="project-expanded" id="petcare-expanded" hidden>
+                        <section class="project-showcase">
+                            <button class="project-close" id="petcare-close" type="button" aria-label="Cerrar experiencia Petcare" data-i18n-aria-label="closePetcareExperience"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                            <div class="petcare-phone-wrap">
+                                <div class="petcare-phone">
+                                    <div class="petcare-phone-screen">
+                                        <video class="petcare-demo-video" controls playsinline preload="metadata" aria-label="Video de demostraci&oacute;n de Petcare" data-i18n-aria-label="petcareVideoLabel" hidden></video>
+                                        <div class="petcare-demo-placeholder">
+                                            <i class="bi bi-play-circle" aria-hidden="true"></i>
+                                            <p data-i18n="petcareVideoPending">El video de demostraci&oacute;n estar&aacute; disponible pronto.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="petcare-phone-caption" data-i18n="petcareDemoCaption">Presentaci&oacute;n de la aplicaci&oacute;n</span>
+                            </div>
+                            <div class="project-details-copy">
+                                <p class="section-kicker" data-i18n="petcareDetailKicker">Conoc&eacute; Petcare</p>
+                                <h3 data-i18n="petcareDetailTitle">El cuidado de cada mascota, en un solo lugar.</h3>
+                                <p data-i18n="petcareDetailDescription">Una aplicaci&oacute;n Android para organizar las historias cl&iacute;nicas y facilitar la comunicaci&oacute;n entre due&ntilde;os, veterinarios y administradores de la cl&iacute;nica.</p>
+                                <ul class="petcare-feature-list">
+                                    <li><i class="bi bi-person-badge" aria-hidden="true"></i><span data-i18n="petcareFeatureProfiles">Perfiles para cada tipo de usuario</span></li>
+                                    <li><i class="bi bi-journal-medical" aria-hidden="true"></i><span data-i18n="petcareFeatureRecords">Historias cl&iacute;nicas de las mascotas</span></li>
+                                    <li><i class="bi bi-phone" aria-hidden="true"></i><span data-i18n="petcareFeatureAndroid">Desarrollada para Android con Kotlin</span></li>
+                                </ul>
+                                <ul class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><li>Kotlin</li><li>Android Studio</li><li>Supabase</li></ul>
+                            </div>
+                        </section>
                     </div>
                 </article>
-
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/o8mwPoS5SMY" title="Demostración del catálogo de ropa" data-i18n-title="clothingVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="proyecto-content">
-                        <h4 class="proyecto-title" data-i18n="clothingTitle">Catálogo de ropa</h4>
-                        <p class="proyecto-text" data-i18n="clothingDescription">Página con catálogo de productos, navegación y mapa de ubicación.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                            </ul>
-                        </div>
-                        <div class="proyecto-acciones">
-                            <a href="https://github.com/nemi1414/Ecommerce-front-end" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
-                        </div>
+                    <button class="project-card-trigger" id="restaurant-trigger" type="button" aria-expanded="false" aria-controls="restaurant-expanded">
+                        <span class="project-card-art" aria-hidden="true"><i class="bi bi-cup-hot"></i><span>ASP.NET &middot; C#</span></span>
+                        <span class="project-card-content">
+                            <span class="project-card-meta">02 <span data-i18n="projectLabel">Proyecto</span></span>
+                            <span class="project-card-title" data-i18n="restaurantTitle">Sistema gestor de restaurante</span>
+                            <span class="project-card-description" data-i18n="restaurantDescription">Sistema para gestionar mesas, productos, empleados, ventas y reportes de un restaurante.</span>
+                            <span class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><span>ASP.NET</span><span>C#</span><span>JavaScript</span><span>SQL</span></span>
+                            <span class="project-card-open"><span data-i18n="projectOpenDetails">Abrir experiencia</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <div class="project-expanded" id="restaurant-expanded" hidden>
+                        <section class="project-showcase">
+                            <button class="project-close" type="button" aria-label="Cerrar proyecto" data-i18n-aria-label="closeProjectExperience"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                            <div class="project-computer-wrap">
+                                <div class="project-computer">
+                                    <div class="project-computer-screen">
+                                        <iframe class="project-demo-video" data-src="https://www.youtube.com/embed/qC3hQjFG6LA" title="Demostraci&oacute;n del sistema gestor de restaurante" data-i18n-title="restaurantVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="project-computer-stand" aria-hidden="true"></div>
+                                    <div class="project-computer-base" aria-hidden="true"></div>
+                                </div>
+                                <span class="project-computer-caption" data-i18n="projectComputerCaption">Video de demostraci&oacute;n</span>
+                            </div>
+                            <div class="project-details-copy">
+                                <p class="section-kicker" data-i18n="projectDetailsKicker">Detalle del proyecto</p>
+                                <h3 data-i18n="restaurantTitle">Sistema gestor de restaurante</h3>
+                                <p data-i18n="restaurantDescription">Sistema para gestionar mesas, productos, empleados, ventas y reportes de un restaurante.</p>
+                                <div class="proyecto-tecnologias"><strong data-i18n="technologies">Tecnolog&iacute;as:</strong><ul><li>ASP.NET</li><li>C#</li><li>JavaScript</li><li>SQL</li></ul></div>
+                                <div class="proyecto-acciones"><a href="https://github.com/julcontrerass/TukiTuAsistenteDeSalon" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver c&oacute;digo</a></div>
+                            </div>
+                        </section>
                     </div>
                 </article>
-
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/1Ow_lqytQzY" title="Demostración del sistema de gestión de cine" data-i18n-title="cinemaVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="proyecto-content">
-                        <h4 class="proyecto-title" data-i18n="cinemaTitle">Sistema de gestión de entradas de cine</h4>
-                        <p class="proyecto-text" data-i18n="cinemaDescription">Aplicación de consola con registros de administradores y clientes para gestionar películas, salas y reservas.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>C++</li>
-                                <li data-i18n="rlutilLibrary">Librería rlutil</li>
-                                <li data-i18n="oopFileHandling">POO y manejo de archivos</li>
-                            </ul>
-                        </div>
-                        <div class="proyecto-acciones">
-                            <a href="https://github.com/nemi1414/gestor-Cine" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
-                        </div>
+                    <button class="project-card-trigger" id="ecommerce-trigger" type="button" aria-expanded="false" aria-controls="ecommerce-expanded">
+                        <span class="project-card-art" aria-hidden="true"><i class="bi bi-bag"></i><span>ASP.NET &middot; C#</span></span>
+                        <span class="project-card-content">
+                            <span class="project-card-meta">03 <span data-i18n="projectLabel">Proyecto</span></span>
+                            <span class="project-card-title" data-i18n="ecommerceTitle">E-commerce ASP.NET</span>
+                            <span class="project-card-description" data-i18n="ecommerceDescription">Aplicaci&oacute;n web con productos y promociones mediante vouchers cargados desde la base de datos, registro de clientes y env&iacute;o de correos.</span>
+                            <span class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><span>ASP.NET</span><span>C#</span><span>SQL</span></span>
+                            <span class="project-card-open"><span data-i18n="projectOpenDetails">Abrir experiencia</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <div class="project-expanded" id="ecommerce-expanded" hidden>
+                        <section class="project-showcase">
+                            <button class="project-close" type="button" aria-label="Cerrar proyecto" data-i18n-aria-label="closeProjectExperience"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                            <div class="project-computer-wrap">
+                                <div class="project-computer">
+                                    <div class="project-computer-screen">
+                                        <iframe class="project-demo-video" data-src="https://www.youtube.com/embed/gWfI6sSuU_Y" title="Demostraci&oacute;n del e-commerce ASP.NET" data-i18n-title="ecommerceVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="project-computer-stand" aria-hidden="true"></div>
+                                    <div class="project-computer-base" aria-hidden="true"></div>
+                                </div>
+                                <span class="project-computer-caption" data-i18n="projectComputerCaption">Video de demostraci&oacute;n</span>
+                            </div>
+                            <div class="project-details-copy">
+                                <p class="section-kicker" data-i18n="projectDetailsKicker">Detalle del proyecto</p>
+                                <h3 data-i18n="ecommerceTitle">E-commerce ASP.NET</h3>
+                                <p data-i18n="ecommerceDescription">Aplicaci&oacute;n web con productos y promociones mediante vouchers cargados desde la base de datos, registro de clientes y env&iacute;o de correos.</p>
+                                <div class="proyecto-tecnologias"><strong data-i18n="technologies">Tecnolog&iacute;as:</strong><ul><li>ASP.NET</li><li>C#</li><li>SQL</li></ul></div>
+                                <div class="proyecto-acciones"><a href="https://github.com/julcontrerass/TPWeb_Equipo8A" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver c&oacute;digo</a></div>
+                            </div>
+                        </section>
                     </div>
                 </article>
-
                 <article class="proyecto-card">
-                    <div class="proyecto-placeholder calculator-placeholder" aria-hidden="true">
-                        <i class="bi bi-bar-chart-line"></i>
-                        <span data-i18n="descriptiveStatistics">Estadística descriptiva</span>
-                    </div>
-                    <div class="proyecto-content">
-                        <h4 class="proyecto-title" data-i18n="calculatorTitle">Calculadora estadística</h4>
-                        <p class="proyecto-text" data-i18n="calculatorDescription">Proyecto de consola con opciones de estadística descriptiva y generación de diagramas circulares.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>C++</li>
-                                <li data-i18n="mathLibrary">Librería math</li>
-                            </ul>
-                        </div>
+                    <button class="project-card-trigger" id="clothing-trigger" type="button" aria-expanded="false" aria-controls="clothing-expanded">
+                        <span class="project-card-art" aria-hidden="true"><i class="bi bi-shop"></i><span>HTML &middot; CSS</span></span>
+                        <span class="project-card-content">
+                            <span class="project-card-meta">04 <span data-i18n="projectLabel">Proyecto</span></span>
+                            <span class="project-card-title" data-i18n="clothingTitle">Cat&aacute;logo de ropa</span>
+                            <span class="project-card-description" data-i18n="clothingDescription">P&aacute;gina con cat&aacute;logo de productos, navegaci&oacute;n y mapa de ubicaci&oacute;n.</span>
+                            <span class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><span>HTML</span><span>CSS</span><span>JavaScript</span></span>
+                            <span class="project-card-open"><span data-i18n="projectOpenDetails">Abrir experiencia</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <div class="project-expanded" id="clothing-expanded" hidden>
+                        <section class="project-showcase">
+                            <button class="project-close" type="button" aria-label="Cerrar proyecto" data-i18n-aria-label="closeProjectExperience"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                            <div class="project-computer-wrap">
+                                <div class="project-computer">
+                                    <div class="project-computer-screen">
+                                        <iframe class="project-demo-video" data-src="https://www.youtube.com/embed/o8mwPoS5SMY" title="Demostraci&oacute;n del cat&aacute;logo de ropa" data-i18n-title="clothingVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="project-computer-stand" aria-hidden="true"></div>
+                                    <div class="project-computer-base" aria-hidden="true"></div>
+                                </div>
+                                <span class="project-computer-caption" data-i18n="projectComputerCaption">Video de demostraci&oacute;n</span>
+                            </div>
+                            <div class="project-details-copy">
+                                <p class="section-kicker" data-i18n="projectDetailsKicker">Detalle del proyecto</p>
+                                <h3 data-i18n="clothingTitle">Cat&aacute;logo de ropa</h3>
+                                <p data-i18n="clothingDescription">P&aacute;gina con cat&aacute;logo de productos, navegaci&oacute;n y mapa de ubicaci&oacute;n.</p>
+                                <div class="proyecto-tecnologias"><strong data-i18n="technologies">Tecnolog&iacute;as:</strong><ul><li>HTML</li><li>CSS</li><li>JavaScript</li></ul></div>
+                                <div class="proyecto-acciones"><a href="https://github.com/nemi1414/Ecommerce-front-end" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver c&oacute;digo</a></div>
+                            </div>
+                        </section>
                     </div>
                 </article>
-
                 <article class="proyecto-card">
-                    <iframe class="proyecto-video" src="https://www.youtube.com/embed/ywoFwvQyKLo" title="Demostración del juego de dados Escalera" data-i18n-title="diceVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <div class="proyecto-content">
-                        <h4 class="proyecto-title" data-i18n="diceTitle">Juego de dados - Escalera</h4>
-                        <p class="proyecto-text" data-i18n="diceDescription">Proyecto de consola con menú para un jugador, dos jugadores, simulación y ranking.</p>
-                        <div class="proyecto-tecnologias">
-                            <strong data-i18n="technologies">Tecnologías:</strong>
-                            <ul>
-                                <li>C++</li>
-                                <li data-i18n="rlutilLibrary">Librería rlutil</li>
-                            </ul>
-                        </div>
-                        <div class="proyecto-acciones">
-                            <a href="https://github.com/nemi1414/Juego-Dados" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver código</a>
-                        </div>
+                    <button class="project-card-trigger" id="cinema-trigger" type="button" aria-expanded="false" aria-controls="cinema-expanded">
+                        <span class="project-card-art" aria-hidden="true"><i class="bi bi-film"></i><span>C++ &middot; POO</span></span>
+                        <span class="project-card-content">
+                            <span class="project-card-meta">05 <span data-i18n="projectLabel">Proyecto</span></span>
+                            <span class="project-card-title" data-i18n="cinemaTitle">Sistema de gesti&oacute;n de entradas de cine</span>
+                            <span class="project-card-description" data-i18n="cinemaDescription">Aplicaci&oacute;n de consola con registros de administradores y clientes para gestionar pel&iacute;culas, salas y reservas.</span>
+                            <span class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><span>C++</span><span data-i18n="rlutilLibrary">Librer&iacute;a rlutil</span><span data-i18n="oopFileHandling">POO y manejo de archivos</span></span>
+                            <span class="project-card-open"><span data-i18n="projectOpenDetails">Abrir experiencia</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <div class="project-expanded" id="cinema-expanded" hidden>
+                        <section class="project-showcase">
+                            <button class="project-close" type="button" aria-label="Cerrar proyecto" data-i18n-aria-label="closeProjectExperience"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                            <div class="project-computer-wrap">
+                                <div class="project-computer">
+                                    <div class="project-computer-screen">
+                                        <iframe class="project-demo-video" data-src="https://www.youtube.com/embed/1Ow_lqytQzY" title="Demostraci&oacute;n del sistema de gesti&oacute;n de cine" data-i18n-title="cinemaVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="project-computer-stand" aria-hidden="true"></div>
+                                    <div class="project-computer-base" aria-hidden="true"></div>
+                                </div>
+                                <span class="project-computer-caption" data-i18n="projectComputerCaption">Video de demostraci&oacute;n</span>
+                            </div>
+                            <div class="project-details-copy">
+                                <p class="section-kicker" data-i18n="projectDetailsKicker">Detalle del proyecto</p>
+                                <h3 data-i18n="cinemaTitle">Sistema de gesti&oacute;n de entradas de cine</h3>
+                                <p data-i18n="cinemaDescription">Aplicaci&oacute;n de consola con registros de administradores y clientes para gestionar pel&iacute;culas, salas y reservas.</p>
+                                <div class="proyecto-tecnologias"><strong data-i18n="technologies">Tecnolog&iacute;as:</strong><ul><li>C++</li><li data-i18n="rlutilLibrary">Librer&iacute;a rlutil</li><li data-i18n="oopFileHandling">POO y manejo de archivos</li></ul></div>
+                                <div class="proyecto-acciones"><a href="https://github.com/nemi1414/gestor-Cine" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver c&oacute;digo</a></div>
+                            </div>
+                        </section>
                     </div>
                 </article>
-
+                <article class="proyecto-card">
+                    <button class="project-card-trigger" id="dice-trigger" type="button" aria-expanded="false" aria-controls="dice-expanded">
+                        <span class="project-card-art" aria-hidden="true"><i class="bi bi-dice-5"></i><span>C++ &middot; rlutil</span></span>
+                        <span class="project-card-content">
+                            <span class="project-card-meta">06 <span data-i18n="projectLabel">Proyecto</span></span>
+                            <span class="project-card-title" data-i18n="diceTitle">Juego de dados - Escalera</span>
+                            <span class="project-card-description" data-i18n="diceDescription">Proyecto de consola con men&uacute; para un jugador, dos jugadores, simulaci&oacute;n y ranking.</span>
+                            <span class="project-tech-list" aria-label="Tecnolog&iacute;as utilizadas" data-i18n-aria-label="techListLabel"><span>C++</span><span data-i18n="rlutilLibrary">Librer&iacute;a rlutil</span></span>
+                            <span class="project-card-open"><span data-i18n="projectOpenDetails">Abrir experiencia</span><i class="bi bi-arrow-up-right" aria-hidden="true"></i></span>
+                        </span>
+                    </button>
+                    <div class="project-expanded" id="dice-expanded" hidden>
+                        <section class="project-showcase">
+                            <button class="project-close" type="button" aria-label="Cerrar proyecto" data-i18n-aria-label="closeProjectExperience"><i class="bi bi-x-lg" aria-hidden="true"></i></button>
+                            <div class="project-computer-wrap">
+                                <div class="project-computer">
+                                    <div class="project-computer-screen">
+                                        <iframe class="project-demo-video" data-src="https://www.youtube.com/embed/ywoFwvQyKLo" title="Demostraci&oacute;n del juego de dados Escalera" data-i18n-title="diceVideoTitle" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    </div>
+                                    <div class="project-computer-stand" aria-hidden="true"></div>
+                                    <div class="project-computer-base" aria-hidden="true"></div>
+                                </div>
+                                <span class="project-computer-caption" data-i18n="projectComputerCaption">Video de demostraci&oacute;n</span>
+                            </div>
+                            <div class="project-details-copy">
+                                <p class="section-kicker" data-i18n="projectDetailsKicker">Detalle del proyecto</p>
+                                <h3 data-i18n="diceTitle">Juego de dados - Escalera</h3>
+                                <p data-i18n="diceDescription">Proyecto de consola con men&uacute; para un jugador, dos jugadores, simulaci&oacute;n y ranking.</p>
+                                <div class="proyecto-tecnologias"><strong data-i18n="technologies">Tecnolog&iacute;as:</strong><ul><li>C++</li><li data-i18n="rlutilLibrary">Librer&iacute;a rlutil</li></ul></div>
+                                <div class="proyecto-acciones"><a href="https://github.com/nemi1414/Juego-Dados" target="_blank" rel="noopener noreferrer" data-i18n="viewCode">Ver c&oacute;digo</a></div>
+                            </div>
+                        </section>
+                    </div>
+                </article>
             </div>
         </div>
     </section>
-
 
     <section id="estudios" class="content-section">
         <div class="section-heading">
